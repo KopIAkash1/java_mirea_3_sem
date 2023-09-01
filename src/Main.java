@@ -3,7 +3,7 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        task6();
+        task7();
     }
 
 
@@ -72,5 +72,14 @@ public class Main {
         for(int i = 0; i < 10; i++){
             System.out.printf("%f%n", (float) 1 / (i + 1));
         }
+    }
+    private static void task7(){
+        int num, result = 1;
+        Scanner scan = new Scanner(System.in);
+        System.out.print("Введите число, которое возведем в факториал - "); num = scan.nextInt();
+        for(int i = 1; i < num + 1; i++){
+            result *= i;
+        }
+        System.out.println(result);
     }
 }
