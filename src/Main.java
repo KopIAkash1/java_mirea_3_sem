@@ -58,5 +58,24 @@ public class Main {
             elem++;
         }while(elem <= size - 1);
         System.out.println("Результат при использованни цикла do-while:\n Сумма - " + sum + "\n Минимальное - " + min + "\n Максимальное - " + max);
+        max = 0; sum = 0; min = 0; elem = 0;
+        while(elem <= size - 1){
+            System.out.print("Элемент под номером " + elem + " - ");
+            mass[elem] = scan.nextInt();
+            sum += mass[elem];
+            if(elem == 0){
+                max = mass[elem];
+                min = mass[elem];
+            } else{
+                if(max < mass[elem]){
+                    max = mass[elem];
+                }
+                if(min > mass[elem]){
+                    min = mass[elem];
+                }
+            }
+            elem++;
+        }
+        System.out.println("Результат при использованни цикла while:\n Сумма - " + sum + "\n Минимальное - " + min + "\n Максимальное - " + max);
     }
 }
