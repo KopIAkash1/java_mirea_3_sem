@@ -18,7 +18,6 @@ public class Main {
             System.out.print("Элемент под номером " + num + " - "); num++;
             mass[i] = scan.nextInt();
         }
-        System.out.println("Все готово!"); // asdasd
         for(int i : mass){
             sum += i;
         }
