@@ -34,47 +34,32 @@ public class Main {
         System.out.printf("Сумма: " + sum + " Среднее арифметическое: " + al);;
     }
     private static void task4(){
-        int size, elem = 0, count = 0, max = 0, min = 0, sum = 0;
+        int size, elem = 0, min, max, sum = 0;
         Scanner scan = new Scanner(System.in);
-        System.out.print("Введите размер массива: ");
-        size = scan.nextInt();
+        System.out.print("Введите размер массива: "); size = scan.nextInt();
         int[] mass = new int[size];
-        do{
-            System.out.print("Элемент под номером " + elem + " - ");
+        while(elem < size){ // ЦИКЛ ЗАПИСИ ЧИСЕЛ
+            System.out.print("Введите значение элемента под номером " + (elem+1) + " - ");
             mass[elem] = scan.nextInt();
-            sum += mass[elem];
-            if(elem == 0){
-                max = mass[elem];
-                min = mass[elem];
-            } else{
-                if(max < mass[elem]){
-                    max = mass[elem];
-                }
-                if(min > mass[elem]){
-                    min = mass[elem];
-                }
-            }
-            elem++;
-        }while(elem <= size - 1);
-        System.out.println("Результат при использованни цикла do-while:\n Сумма - " + sum + "\n Минимальное - " + min + "\n Максимальное - " + max);
-        max = 0; sum = 0; min = 0; elem = 0;
-        while(elem <= size - 1){
-            System.out.print("Элемент под номером " + elem + " - ");
-            mass[elem] = scan.nextInt();
-            sum += mass[elem];
-            if(elem == 0){
-                max = mass[elem];
-                min = mass[elem];
-            } else{
-                if(max < mass[elem]){
-                    max = mass[elem];
-                }
-                if(min > mass[elem]){
-                    min = mass[elem];
-                }
-            }
             elem++;
         }
-        System.out.println("Результат при использованни цикла while:\n Сумма - " + sum + "\n Минимальное - " + min + "\n Максимальное - " + max);
+        elem = 0;
+        min = mass[0];
+        max = mass[0];
+        while(elem < size){
+            sum += mass[elem];
+            if(min > mass[elem]){min = mass[elem];}
+            if(max < mass[elem]){max = mass[elem];}
+            elem++;
+        }
+        System.out.println("Цикл WHILE:\n Сумма - " + sum +"\n Минимальное число - " + min + "\n Максимальное число - " + max);
+        sum = 0; elem = 0;
+        do{
+            sum += mass[elem];
+            if(min > mass[elem]){min = mass[elem];}
+            if(max < mass[elem]){max = mass[elem];}
+            elem++;
+        }while(elem < size);
+        System.out.println("Цикл DO-WHILE:\n Сумма - " + sum +"\n Минимальное число - " + min + "\n Максимальное число - " + max);
     }
 }
