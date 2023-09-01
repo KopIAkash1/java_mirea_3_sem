@@ -3,7 +3,7 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        task4();
+        task6();
     }
 
 
@@ -61,5 +61,16 @@ public class Main {
             elem++;
         }while(elem < size);
         System.out.println("Цикл DO-WHILE:\n Сумма - " + sum +"\n Минимальное число - " + min + "\n Максимальное число - " + max);
+    }
+    private static void task5(String[] args){
+        for(String str : args){
+            System.out.print(str + " ");
+        }
+    }
+    private static void task6(){
+        float num;
+        for(int i = 0; i < 10; i++){
+            System.out.printf("%f%n", (float) 1 / (i + 1));
+        }
     }
 }
